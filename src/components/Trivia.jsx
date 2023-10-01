@@ -12,14 +12,15 @@ export default function Trivia() {
     const [submitted, setSubmitted] = useState(false);
     const [numCorrect, setNumCorrect] = useState(0);
     const [toggleScreen, setToggleScreen] = useState(false);
-    const [category, setCategory] = useState('');
-    const [difficulty, setDifficulty] = useState('')
+    // const [category, setCategory] = useState('');
+    // const [difficulty, setDifficulty] = useState('')
     const [darkMode, setDarkMode] = useState(false)
     const [confetti, setConfetti] = useState(false)
+    const [fetchURL, setFetchURL] = useState('https://opentdb.com/api.php?amount=5&type=multiple')
 
     useEffect(() => {
         if(toggleScreen === false){
-            fetch(`https://opentdb.com/api.php?amount=5&type=multiple${category}${difficulty}`)
+            fetch(fetchURL)
             .then(response => response.json())
             .then(data => {
                 setTriviaItems(data.results.map(item => {
@@ -35,7 +36,7 @@ export default function Trivia() {
                 console.log(err.message);
              });
         }
-    }, [toggleScreen])
+    }, [fetchURL])
 
     //Sets selected answers based off of triviaItems answers with isSelected = true
     useEffect(() => {
@@ -50,11 +51,11 @@ export default function Trivia() {
     }
 
     function changeCategory(){
-        setCategory(`&category=${event.target.value}`);
+        setFetchURL(prevURL => prevURL.concat(`&category=${event.target.value}`));
     }
 
     function changeDifficulty(){
-        setDifficulty(`&difficulty=${event.target.value}`);
+        setFetchURL(prevURL => prevURL.concat(`&difficulty=${event.target.value}`));
     }
 
     function decodeArr(arr){
@@ -154,8 +155,7 @@ export default function Trivia() {
         setSubmitted(false);
         setNumCorrect(0);
         setTriviaItems([]);
-        setCategory('');
-        setDifficulty('');
+        setFetchURL('https://opentdb.com/api.php?amount=5&type=multiple');
         setConfetti(false);
         setToggleScreen(prevScreen => !prevScreen)
     }
