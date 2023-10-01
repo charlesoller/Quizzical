@@ -1,0 +1,346 @@
+/* ---------------------------------------- General ---------------------------------------- */
+
+html,body {
+    margin:0;
+    padding:0;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    background: #F5F7FB;
+    color: #293264;
+    font-family: Karla, Arial, Helvetica, sans-serif;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+}
+
+.button {
+    color: #293264;
+    text-align: center;
+    font-family: Inter, Arial, Helvetica, sans-serif;
+    font-size: 0.8rem;
+    font-weight: 500;
+    border-radius: 15px;
+    border: 1.5px solid #4D5B9E;
+    padding: 1em 2em;
+}
+
+.button--alt {
+    color: #F5F7FB;
+    background: #4D5B9E;
+    font-family: Karla, Arial, Helvetica, sans-serif;
+    cursor: pointer;
+}
+
+.button--alt:hover {
+    background: #35417a;
+}
+
+.button--alt--dark {
+    background: #35417a;
+    border: 1.5px solid #262f59;
+    color: #F5F7FB;
+}
+
+.button--alt--dark:hover {
+    background: #262f59;
+}
+
+@media(max-width: 800px) {
+    .button{
+        font-size: 0.6rem;
+        padding: 0.7em 1.8em;
+    }
+}
+/* ---------------------------------------- Welcome Component ---------------------------------------- */
+
+.welcome {
+    height: 90vh;
+    display: flex;
+    justify-content: center;
+    background-image: url("./assets/blob_5.svg"), url("./assets/blob_4.svg");
+    background-repeat: no-repeat;
+    background-position: top right, bottom left;
+    background-size: 30%;
+}
+
+.welcome--dark {
+    background-color: #2B283A;
+    color: #F5F7FB;
+    background-image: url("./assets/blob_2.png"), url("./assets/blob_3.png");
+}
+
+.welcome__container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 9em;
+}
+
+.welcome__title {
+    font-size: 6rem;
+    margin: 0;
+}
+
+.welcome__subtext {
+    margin: 0;
+    font-size: 0.8rem;
+}
+
+.dropdown__container{
+    width: 100%;
+    margin: 2.5em 0 1em 0;
+}
+
+.dropdown {
+    font-family: Inter, Arial, Helvetica, sans-serif;
+    border: none;
+    padding: 0.5em;
+    color: #293264;
+    border-radius: 10px;
+    border-radius: 7.71px;
+    border: 0.771px solid #4D5B9E;
+    cursor: pointer;
+}
+
+.dropdown--dark {
+    background: #F5F7FB;
+}
+
+.dropdown--category {
+    width: 68%;
+}
+
+.dropdown--difficulty {
+    width: 29%;
+    margin-left: 3%;
+}
+
+.welcome__button {
+    width: 100%;
+    font-size: 1.2rem;
+    font-weight: 600;
+}
+
+@media(max-width: 800px) {
+    .welcome {
+        background-size: 45%;
+    }
+
+    .welcome__container {
+        /* margin-top: 35%; */
+        padding: 2em 4em;
+    }
+
+    .welcome__title {
+        font-size: 4.5rem;
+    }
+
+    .dropdown__container{
+        margin-top: 1.7em;
+    }
+
+    .dropdown--category {
+        width: 60%;
+    }
+
+    .dropdown--difficulty {
+        width: 37%;
+    }
+}
+
+/* ---------------------------------------- Trivia Component ---------------------------------------- */
+
+.trivia {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    background-image: url("./assets/blob_5.svg"), url("./assets/blob_4.svg");
+    background-repeat: no-repeat;
+    background-position: top right, bottom left;
+    background-size: 25%;
+}
+
+.trivia--dark {
+    background-color: #2B283A;
+    background-image: url("./assets/blob_2.png"), url("./assets/blob_3.png");
+}
+
+.button--submit {
+    font-size: 1rem;
+    padding: 1em 2.2em;
+}
+
+.footer__container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 4em;
+    padding: 0 10em 2em 10em;
+}
+
+.footer__text {
+    font-size: 1.3rem;
+    margin: 0;
+}
+
+.footer__text--dark {
+    color: #F5F7FB;
+}
+
+@media(max-width: 800px) {
+    .trivia {
+        background-size: 50%, 40%;
+    }
+
+    .footer__container {
+        flex-direction: column;
+        padding: 0 1em 1em 1em;
+        gap: 1em;
+    }
+}
+
+@media(max-width: 530px) {
+    .button--submit {
+        width: 100%;
+    }
+}
+
+
+/* ---------------------------------------- Question Component ---------------------------------------- */
+
+.answers__container {
+    display: flex;
+    justify-content: center;
+    gap: 1em;
+    padding-bottom: 1.7em;
+    border-bottom: 1px solid #DBDEF0;
+}
+
+.answers__container--dark {
+    border-bottom: 1px solid #7971a3;
+}
+
+.question__container {
+    padding: 2em 10em;
+}
+
+.question__text--dark {
+    color: #F5F7FB;
+}
+
+.button--dark {
+    color: #F5F7FB;
+    border: 1px solid #7971a3;
+}
+
+@media(max-width: 800px) {
+    .answers__container {
+        gap: 0.4em;
+        width: 100%;
+        margin-top: 1.3em;
+        padding-bottom: 1.3em
+    }
+
+    .question__text {
+        font-size: 1.3rem;
+    }
+
+    .question__container {
+        padding: 2em;
+    }
+}
+
+/* ---------------------------------------- Header & Toggle ---------------------------------------- */
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #e8effe;
+    padding: 2em 1.7em;
+    height: 10vh;
+    box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.25);
+    position: relative;
+    z-index: 1;
+}
+
+.header--dark {
+    background: #21222A;
+    color: #F5F7FB;
+    box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.5);
+}
+
+.header__text {
+    cursor: pointer;
+    font-size: 1.4rem;
+}
+
+/* Toggle */
+
+.toggle {
+    display: flex;
+    align-items: center;
+}
+
+.toggle__label {
+    font-size: 0.625rem;
+    font-weight: 600;
+}
+
+.toggle__slider {
+    width: 25px;
+    height: 13px;
+    background-color: #2B283A;
+    border-radius: 2rem;
+    margin-inline: 7px;
+    cursor: pointer;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    border: 1px solid black;
+    box-sizing: content-box;
+}
+
+/* Toggle Dark/Light Modes */
+
+.header--dark .toggle__slider {
+    border-color: #F5F7FB;
+    background-color: #F5F7FB;
+}
+
+.toggle__slider__circle {
+    height: 13px;
+    width: 13px;
+    background-color: #fcfeff;
+    border-radius: 50%;
+}
+
+.header--dark .toggle__slider__circle {
+    background-color:#21222A;
+}
+
+.toggle--light {
+    color: #2B283A;
+}
+
+.header--dark .toggle--light {
+    color: #918E9B;
+}
+
+.toggle--dark {
+    color: #D5D4D8;
+}
+
+.header--dark .toggle--dark {
+    color: #F5F7FB;
+}
+
+.header--dark .toggle__slider {
+    justify-content: flex-end;
+}
