@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react'
+import useWindowSize from 'react-use/lib/useWindowSize'
 import he from 'he'
 import { nanoid } from 'nanoid'
 import Question from './Question.jsx'
@@ -12,11 +13,10 @@ export default function Trivia() {
     const [submitted, setSubmitted] = useState(false);
     const [numCorrect, setNumCorrect] = useState(0);
     const [toggleScreen, setToggleScreen] = useState(false);
-    // const [category, setCategory] = useState('');
-    // const [difficulty, setDifficulty] = useState('')
-    const [darkMode, setDarkMode] = useState(false)
-    const [confetti, setConfetti] = useState(false)
-    const [fetchURL, setFetchURL] = useState('https://opentdb.com/api.php?amount=5&type=multiple')
+    const [darkMode, setDarkMode] = useState(false);
+    const [confetti, setConfetti] = useState(false);
+    const [fetchURL, setFetchURL] = useState('https://opentdb.com/api.php?amount=5&type=multiple');
+    const { width, height } = useWindowSize();
 
     useEffect(() => {
         if(toggleScreen === false){
@@ -182,7 +182,7 @@ export default function Trivia() {
         toggleScreen ?
         (
             <div className={darkMode ? "trivia--dark trivia" : "trivia"}>
-                {confetti && <Confetti />}
+                {confetti && <Confetti width={width} height={height}/>}
                 <Header darkMode={darkMode} toggleDarkMode={toggleDarkMode} goHome={goHome}/>
                 <div className="question__container">
                     {triviaItemsElements}
