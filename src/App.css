@@ -3,6 +3,7 @@
 html,body {
     margin:0;
     padding:0;
+    overflow-x: hidden;
 }
 
 * {
@@ -133,12 +134,12 @@ body {
     }
 
     .welcome__container {
-        /* margin-top: 35%; */
-        padding: 2em 4em;
+        padding: 0 4em;
+        /* margin-top: 45%; */
     }
 
     .welcome__title {
-        font-size: 4.5rem;
+        font-size: 4rem;
     }
 
     .dropdown__container{
@@ -146,11 +147,11 @@ body {
     }
 
     .dropdown--category {
-        width: 60%;
+        width: 58%;
     }
 
     .dropdown--difficulty {
-        width: 37%;
+        width: 39%;
     }
 }
 
@@ -164,6 +165,7 @@ body {
     background-repeat: no-repeat;
     background-position: top right, bottom left;
     background-size: 25%;
+    margin-bottom: 0;
 }
 
 .trivia--dark {
