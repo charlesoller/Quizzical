@@ -13,7 +13,7 @@ export default function Trivia() {
     const [submitted, setSubmitted] = useState(false);
     const [numCorrect, setNumCorrect] = useState(0);
     const [toggleScreen, setToggleScreen] = useState(false);
-    const [darkMode, setDarkMode] = useState(false);
+    const [darkMode, setDarkMode] = useState(true);
     const [confetti, setConfetti] = useState(false);
     const [fetchURL, setFetchURL] = useState('https://opentdb.com/api.php?amount=5&type=multiple');
     const { width, height } = useWindowSize();

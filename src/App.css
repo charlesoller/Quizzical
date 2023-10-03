@@ -64,16 +64,16 @@ body {
     height: 90vh;
     display: flex;
     justify-content: center;
-    background-image: url("./assets/blob_5.svg"), url("./assets/blob_4.svg");
+    background-image: url("./assets/blob_5.svg"), url("./assets/blob_4.svg"), url("./assets/blob_2.svg"), url("./assets/blob_3.svg");
     background-repeat: no-repeat;
     background-position: top right, bottom left;
-    background-size: 30%;
+    background-size: 30%, 30%, 0, 0;
 }
 
 .welcome--dark {
     background-color: #2B283A;
     color: #F5F7FB;
-    background-image: url("./assets/blob_2.png"), url("./assets/blob_3.png");
+    background-size: 0, 0, 30%, 30%;
 }
 
 .welcome__container {
@@ -130,7 +130,11 @@ body {
 
 @media(max-width: 800px) {
     .welcome {
-        background-size: 45%;
+        background-size: 45%, 45%, 0, 0;
+    }
+
+    .welcome--dark {
+        background-size: 0, 0, 45%, 45%;
     }
 
     .welcome__container {
