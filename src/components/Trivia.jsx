@@ -6,6 +6,7 @@ import Question from './Question.jsx'
 import Welcome from './Welcome.jsx'
 import Header from './Header.jsx'
 import Confetti from 'react-confetti'
+import ConfettiExplosion from 'react-confetti-explosion';
 
 export default function Trivia() {
     const [triviaItems, setTriviaItems] = useState([]);
@@ -17,6 +18,9 @@ export default function Trivia() {
     const [confetti, setConfetti] = useState(false);
     const [fetchURL, setFetchURL] = useState('https://opentdb.com/api.php?amount=5&type=multiple');
     const { width, height } = useWindowSize();
+
+    // console.log(fetchURL)
+    // console.log(toggleScreen)
 
     useEffect(() => {
         if(toggleScreen === false){
@@ -182,7 +186,7 @@ export default function Trivia() {
         toggleScreen ?
         (
             <div className={darkMode ? "trivia--dark trivia" : "trivia"}>
-                {confetti && <Confetti width={width} height={height}/>}
+                {confetti && <Confetti className='confetti' />}
                 <Header darkMode={darkMode} toggleDarkMode={toggleDarkMode} goHome={goHome}/>
                 <div className="question__container">
                     {triviaItemsElements}
@@ -191,6 +195,7 @@ export default function Trivia() {
                     {submitted && <p className={darkMode ? 'footer__text footer__text--dark' : 'footer__text'}>You scored {numCorrect} / 5 answers correct.</p>}
                     <button className={darkMode ? 'button button--alt button--alt--dark button--submit' : 'button button--alt button--submit'} onClick={submitted ? resetGame : checkAnswers}>
                         {submitted ? 'New Game' : 'Check Answers'}
+                        {confetti && <ConfettiExplosion force={0.8} duration={3000} particleCount={250} width={1600}/>}
                     </button>
                 </div>
             </div>
