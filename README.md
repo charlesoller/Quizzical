@@ -1,3 +1,5 @@
+LIVE LINK: https://oller-quizzical.netlify.app
+
 Quizzical! represents an indepth knowledge of core React principles, such as usage of common hooks like useState and useReact, utilization of external APIs (in this case, pulling from https://opentdb.com/, and attention to detail. Quizzical is fully responsive, and contains extra features, such as React Confetti for anyone who is able to answer all questions correctly, dark/light-mode, and customizable category/difficulty fields. This project was my first major undertaking in React, and was styled entirely with custom CSS.
 
 # React + Vite
